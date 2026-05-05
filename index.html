@@ -73,23 +73,18 @@
       gap: 18px;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
-      font-size: .86rem;
-      letter-spacing: .02em;
+      font-size: .9rem;
+      letter-spacing: 0;
     }
 
     .mark {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       color: var(--ink);
       text-decoration: none;
-    }
-
-    .mark-dot {
-      width: 9px;
-      height: 9px;
-      background: var(--clay);
-      border: 1px solid var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: .95;
     }
 
     .nav {
@@ -210,19 +205,6 @@
       min-height: 520px;
       border-left: 1px solid var(--line);
       padding-left: clamp(22px, 4vw, 46px);
-    }
-
-    .signal-panel::after {
-      content: "";
-      position: absolute;
-      inset: 86px -18px 116px 22px;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, transparent 0, rgba(23, 23, 23, .16) 1px, transparent 1px) 0 0 / 108px 100%,
-        linear-gradient(0deg, transparent 0, rgba(23, 23, 23, .09) 1px, transparent 1px) 0 0 / 100% 92px;
-      opacity: .26;
-      -webkit-mask-image: radial-gradient(ellipse at 52% 48%, #000 0 45%, transparent 76%);
-      mask-image: radial-gradient(ellipse at 52% 48%, #000 0 45%, transparent 76%);
     }
 
     .signal-label {
@@ -635,8 +617,7 @@
 <body>
   <header class="shell topbar" aria-label="Profile navigation">
     <a class="mark" href="#top" aria-label="Pranay Bindela profile home">
-      <span class="mark-dot" aria-hidden="true"></span>
-      <span>Pranay Bindela</span>
+      Pranay Bindela
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#story">Story</a>
@@ -1149,22 +1130,6 @@
         var w = canvas.clientWidth;
         var h = canvas.clientHeight;
         ctx.clearRect(0, 0, w, h);
-
-        ctx.strokeStyle = "rgba(23, 23, 23, .08)";
-        ctx.lineWidth = .8;
-        for (var gx = 52; gx < w; gx += 104) {
-          ctx.beginPath();
-          ctx.moveTo(gx, h * .16);
-          ctx.lineTo(gx, h * .84);
-          ctx.stroke();
-        }
-
-        for (var gy = 46; gy < h; gy += 92) {
-          ctx.beginPath();
-          ctx.moveTo(w * .08, gy);
-          ctx.lineTo(w * .92, gy);
-          ctx.stroke();
-        }
 
         ctx.strokeStyle = "rgba(170, 95, 63, .2)";
         ctx.lineWidth = .9;
