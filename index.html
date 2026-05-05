@@ -212,6 +212,19 @@
       padding-left: clamp(22px, 4vw, 46px);
     }
 
+    .signal-panel::after {
+      content: "";
+      position: absolute;
+      inset: 86px -18px 116px 22px;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0, rgba(23, 23, 23, .16) 1px, transparent 1px) 0 0 / 108px 100%,
+        linear-gradient(0deg, transparent 0, rgba(23, 23, 23, .09) 1px, transparent 1px) 0 0 / 100% 92px;
+      opacity: .26;
+      -webkit-mask-image: radial-gradient(ellipse at 52% 48%, #000 0 45%, transparent 76%);
+      mask-image: radial-gradient(ellipse at 52% 48%, #000 0 45%, transparent 76%);
+    }
+
     .signal-label {
       display: grid;
       grid-template-columns: 78px 1fr;
@@ -232,19 +245,25 @@
     }
 
     #motion-field {
+      position: relative;
+      z-index: 1;
       width: 100%;
       height: 360px;
       display: block;
-      background: var(--field);
-      border: 1px solid var(--line);
-      border-radius: 2px;
+      background: transparent;
+      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 0 58%, transparent 83%);
+      mask-image: radial-gradient(ellipse at 50% 50%, #000 0 58%, transparent 83%);
     }
 
     .field-caption {
-      margin: 20px 0 0;
+      position: relative;
+      z-index: 1;
+      margin: 12px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid rgba(23, 23, 23, .12);
       color: var(--muted);
       max-width: 420px;
-      font-size: .96rem;
+      font-size: .9rem;
     }
 
     .section {
@@ -1130,30 +1149,42 @@
         var w = canvas.clientWidth;
         var h = canvas.clientHeight;
         ctx.clearRect(0, 0, w, h);
-        ctx.fillStyle = "#e6eee8";
-        ctx.fillRect(0, 0, w, h);
 
-        ctx.strokeStyle = "rgba(23, 23, 23, .12)";
-        ctx.lineWidth = 1;
-        for (var gx = 42; gx < w; gx += 58) {
+        ctx.strokeStyle = "rgba(23, 23, 23, .08)";
+        ctx.lineWidth = .8;
+        for (var gx = 52; gx < w; gx += 104) {
           ctx.beginPath();
-          ctx.moveTo(gx, 0);
-          ctx.lineTo(gx, h);
+          ctx.moveTo(gx, h * .16);
+          ctx.lineTo(gx, h * .84);
           ctx.stroke();
         }
 
-        for (var gy = 38; gy < h; gy += 58) {
+        for (var gy = 46; gy < h; gy += 92) {
           ctx.beginPath();
-          ctx.moveTo(0, gy);
-          ctx.lineTo(w, gy);
+          ctx.moveTo(w * .08, gy);
+          ctx.lineTo(w * .92, gy);
           ctx.stroke();
         }
+
+        ctx.strokeStyle = "rgba(170, 95, 63, .2)";
+        ctx.lineWidth = .9;
+        [
+          [w * .08, h * .18, w * .08, h * .26],
+          [w * .08, h * .18, w * .16, h * .18],
+          [w * .92, h * .82, w * .92, h * .74],
+          [w * .92, h * .82, w * .84, h * .82]
+        ].forEach(function (line) {
+          ctx.beginPath();
+          ctx.moveTo(line[0], line[1]);
+          ctx.lineTo(line[2], line[3]);
+          ctx.stroke();
+        });
 
         points.forEach(function (pt, index) {
           var drift = reduceMotion ? 0 : Math.sin(tick * .014 + pt.p) * 5;
           var px = pt.x + drift;
           var py = pt.y + Math.cos(tick * .012 + pt.p) * (reduceMotion ? 0 : 4);
-          ctx.fillStyle = index % 7 === 0 ? "rgba(170, 95, 63, .75)" : "rgba(47, 111, 87, .42)";
+          ctx.fillStyle = index % 7 === 0 ? "rgba(170, 95, 63, .48)" : "rgba(23, 23, 23, .18)";
           ctx.beginPath();
           ctx.arc(px, py, pt.r, 0, Math.PI * 2);
           ctx.fill();
@@ -1165,27 +1196,43 @@
         var endY = h * .22;
         var pulse = reduceMotion ? .5 : (Math.sin(tick * .022) + 1) / 2;
 
-        ctx.strokeStyle = "#171717";
-        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(23, 23, 23, .2)";
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 7]);
+        ctx.beginPath();
+        ctx.moveTo(startX, startY + h * .02);
+        ctx.bezierCurveTo(w * .24, h * .64, w * .46, h * .36, w * .6, h * .5);
+        ctx.bezierCurveTo(w * .7, h * .62, w * .82, h * .24, endX, endY + h * .02);
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+        ctx.strokeStyle = "rgba(23, 23, 23, .78)";
+        ctx.lineWidth = 1.35;
         ctx.beginPath();
         ctx.moveTo(startX, startY);
         ctx.bezierCurveTo(w * .28, h * (.54 - pulse * .06), w * .48, h * (.72 + pulse * .04), w * .58, h * .45);
         ctx.bezierCurveTo(w * .69, h * (.18 + pulse * .07), w * .78, h * .32, endX, endY);
         ctx.stroke();
 
-        ctx.fillStyle = "#171717";
+        ctx.fillStyle = "rgba(23, 23, 23, .86)";
         [[startX, startY], [endX, endY]].forEach(function (pair) {
           ctx.beginPath();
-          ctx.rect(pair[0] - 4, pair[1] - 4, 8, 8);
+          ctx.rect(pair[0] - 3.5, pair[1] - 3.5, 7, 7);
           ctx.fill();
         });
 
-        ctx.fillStyle = "#3b61a8";
+        ctx.fillStyle = "#aa5f3f";
         var agentX = startX + (endX - startX) * pulse;
         var agentY = startY + (endY - startY) * pulse + Math.sin(pulse * Math.PI * 2) * h * .08;
         ctx.beginPath();
-        ctx.arc(agentX, agentY, 5, 0, Math.PI * 2);
+        ctx.arc(agentX, agentY, 4.4, 0, Math.PI * 2);
         ctx.fill();
+
+        ctx.strokeStyle = "rgba(170, 95, 63, .22)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(agentX, agentY, 9, 0, Math.PI * 2);
+        ctx.stroke();
 
         tick += 1;
         if (!reduceMotion) requestAnimationFrame(draw);
