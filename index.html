@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Profile of Pranay Bindela, software engineer and AI systems builder working across production platforms, molecular ML, diffusion models, and path planning.">
+  <title>Pranay Bindela - Profile</title>
+  <style>
+    :root {
+      --paper: #f7f4ed;
+      --ink: #171717;
+      --muted: #67645f;
+      --line: #d9d2c4;
+      --field: #e6eee8;
+      --blue: #3b61a8;
+      --green: #2f6f57;
+      --clay: #aa5f3f;
+      --yellow: #c79b32;
+      --white: #fffaf1;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23, 23, 23, .035) 1px, transparent 1px) 0 0 / 64px 64px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .26;
+      background-image: radial-gradient(rgba(23, 23, 23, .12) .7px, transparent .7px);
+      background-size: 5px 5px;
+      mix-blend-mode: multiply;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(47, 111, 87, .45);
+      text-underline-offset: 5px;
+    }
+
+    a:hover {
+      text-decoration-color: var(--green);
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .86rem;
+      letter-spacing: .02em;
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .mark-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--clay);
+      border: 1px solid var(--ink);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(300px, .78fr);
+      gap: clamp(28px, 6vw, 82px);
+      align-items: center;
+      padding: clamp(44px, 7vw, 92px) 0 clamp(54px, 9vw, 118px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--green);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      margin: 0 0 24px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(3.1rem, 8.8vw, 8.6rem);
+      line-height: .9;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 4.4rem);
+      line-height: .98;
+    }
+
+    h3 {
+      font-size: clamp(1.32rem, 2vw, 1.9rem);
+      line-height: 1.08;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 28px 0 0;
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      color: #2c2b28;
+    }
+
+    .nameplate {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: end;
+      max-width: 760px;
+      margin-bottom: 26px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nameplate strong {
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(2rem, 5.4vw, 5.2rem);
+      font-weight: 500;
+      line-height: .88;
+      letter-spacing: 0;
+    }
+
+    .nameplate em {
+      display: block;
+      margin-left: .56em;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .sigil {
+      width: clamp(62px, 8vw, 96px);
+      height: auto;
+      margin-bottom: 4px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .hero-meta span {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .signal-panel {
+      position: relative;
+      min-height: 520px;
+      border-left: 1px solid var(--line);
+      padding-left: clamp(22px, 4vw, 46px);
+    }
+
+    .signal-label {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 15px;
+      align-items: start;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .signal-label::before {
+      content: "";
+      height: 1px;
+      margin-top: .72em;
+      background: var(--ink);
+    }
+
+    #motion-field {
+      width: 100%;
+      height: 360px;
+      display: block;
+      background: var(--field);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+    }
+
+    .field-caption {
+      margin: 20px 0 0;
+      color: var(--muted);
+      max-width: 420px;
+      font-size: .96rem;
+    }
+
+    .section {
+      padding: clamp(54px, 8vw, 112px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(170px, .34fr) minmax(0, 1fr);
+      gap: clamp(28px, 6vw, 86px);
+      align-items: start;
+    }
+
+    .section-label {
+      position: sticky;
+      top: 22px;
+      color: var(--muted);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 870px;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(1.65rem, 3.2vw, 3.15rem);
+      line-height: 1.08;
+    }
+
+    .body-block {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px clamp(24px, 5vw, 60px);
+      color: #2f2e2b;
+    }
+
+    .body-block p {
+      margin: 0;
+    }
+
+    .thread-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--ink);
+    }
+
+    .thread {
+      display: grid;
+      grid-template-columns: minmax(180px, .42fr) minmax(0, 1fr);
+      gap: clamp(18px, 4vw, 58px);
+      padding: clamp(22px, 4vw, 42px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thread .eyebrow {
+      color: var(--green);
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 8px;
+    }
+
+    .thread p {
+      margin: 14px 0 0;
+      color: #33302b;
+    }
+
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .proof span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, .54);
+      color: var(--muted);
+      font-size: .84rem;
+      border-radius: 999px;
+    }
+
+    .chapter {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: clamp(18px, 4vw, 52px);
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter:first-child {
+      padding-top: 0;
+    }
+
+    .chapter:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .chapter-year {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .chapter p {
+      margin: 12px 0 0;
+      color: #33302b;
+      max-width: 780px;
+    }
+
+    .impact-board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .metric {
+      min-height: 188px;
+      background: rgba(255, 250, 241, .62);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric strong {
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(2rem, 3.4vw, 3.5rem);
+      font-weight: 500;
+      line-height: .95;
+      color: var(--ink);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .lab-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .note {
+      min-height: 330px;
+      background: rgba(255, 250, 241, .68);
+      padding: clamp(22px, 3vw, 30px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .note-index {
+      color: var(--clay);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .note p {
+      margin: 18px 0 0;
+      color: #33302b;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 860px;
+      margin-top: 26px;
+    }
+
+    .stack span {
+      border: 1px solid var(--line);
+      background: rgba(230, 238, 232, .5);
+      padding: 5px 9px;
+      font-size: .86rem;
+      color: #3c3934;
+    }
+
+    .field-figure {
+      margin: clamp(30px, 5vw, 54px) 0 0;
+      max-width: 850px;
+    }
+
+    .field-figure svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: rgba(255, 250, 241, .44);
+      border: 1px solid var(--line);
+    }
+
+    .field-figure figcaption {
+      margin-top: 11px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(23, 23, 23, .18);
+      color: var(--muted);
+      font-size: .74rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .field-figure b {
+      color: var(--ink);
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    .pullquote {
+      margin: clamp(28px, 5vw, 52px) 0 0;
+      max-width: 620px;
+      padding-left: 20px;
+      border-left: 2px solid var(--clay);
+      color: var(--muted);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(1.3rem, 2.4vw, 2.1rem);
+      font-style: italic;
+      line-height: 1.18;
+    }
+
+    .contact-band {
+      padding: clamp(54px, 8vw, 100px) 0 34px;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .contact p {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: #33302b;
+      font-size: 1.05rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+      color: var(--muted);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 42px;
+      color: var(--muted);
+      font-size: .86rem;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .section-grid,
+      .thread,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .nameplate {
+        grid-template-columns: 1fr;
+      }
+
+      .sigil {
+        justify-self: end;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .signal-panel {
+        min-height: auto;
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .section-label {
+        position: static;
+      }
+
+      .body-block,
+      .impact-board,
+      .lab-notes {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        min-height: 150px;
+      }
+
+      .note {
+        min-height: 260px;
+      }
+
+      .contact-links {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 5rem);
+      }
+
+      .chapter {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      #motion-field {
+        height: 280px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar" aria-label="Profile navigation">
+    <a class="mark" href="#top" aria-label="Pranay Bindela profile home">
+      <span class="mark-dot" aria-hidden="true"></span>
+      <span>Pranay Bindela</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#story">Story</a>
+      <a href="#research">Research</a>
+      <a href="#systems">Systems</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">I build AI systems that move from idea to working machinery.</h1>
+        <p class="hero-copy">
+          I am Pranay Bindela, a tech lead and software engineer shaped by production systems,
+          Boston's biotech gravity, and a long-running fascination with diffusion, path planning,
+          and models that learn structure from noisy worlds.
+        </p>
+        <div class="hero-meta" aria-label="Profile summary">
+          <span>Based in Dubai</span>
+          <span>5+ years building software</span>
+          <span>MS in Applied Machine Intelligence, Northeastern</span>
+          <span>Former Boston biotech co-op</span>
+        </div>
+      </div>
+
+      <aside class="signal-panel" aria-label="Diffusion and path planning visual">
+        <div class="signal-label">Research signal</div>
+        <canvas id="motion-field" width="760" height="760"></canvas>
+        <p class="field-caption">
+          A small field of particles finding a clean path through uncertainty. That idea shows up
+          repeatedly in my work: molecules, proteins, legislation, invoices, meters, and robots.
+        </p>
+      </aside>
+    </section>
+
+    <section id="story" class="shell section" aria-labelledby="story-title">
+      <div class="section-grid">
+        <div class="section-label">01 / Story</div>
+        <div>
+          <h2 id="story-title">Boston made the work feel physical.</h2>
+          <p class="lead">
+            I went to Northeastern to study applied machine intelligence, but Boston gave me a more
+            specific question: what happens when learning systems touch the real world?
+          </p>
+          <div class="body-block">
+            <p>
+              I lived in a city where biotech is not an abstraction. At Arrakis Therapeutics, my co-op
+              sat inside the therapeutic discovery loop: molecular strings, fingerprints, graph neural
+              networks, solubility prediction, distributed training, and the pressure to make research
+              iteration faster.
+            </p>
+            <p>
+              That experience changed how I judge AI work. I care about the model, but I care just as
+              much about the surrounding system: how data enters, how errors are contained, how privacy
+              is protected, how quickly a researcher or operator can try the next idea, and whether the
+              system still behaves when it leaves the notebook.
+            </p>
+          </div>
+          <figure class="field-figure">
+            <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Career path from Bengaluru to Boston to Dubai">
+              <path d="M 90 100 Q 245 28 360 100" stroke="#aa5f3f" stroke-width="1.2" stroke-dasharray="4 7" fill="none"></path>
+              <path d="M 360 100 Q 505 24 630 100" stroke="#aa5f3f" stroke-width="1.2" stroke-dasharray="4 7" fill="none"></path>
+              <g fill="#171717">
+                <circle cx="90" cy="100" r="6"></circle>
+                <circle cx="360" cy="100" r="6"></circle>
+              </g>
+              <circle cx="630" cy="100" r="7" fill="#aa5f3f"></circle>
+              <g stroke="#171717" stroke-width=".7" fill="none">
+                <circle cx="90" cy="100" r="13"></circle>
+                <circle cx="360" cy="100" r="13"></circle>
+              </g>
+              <circle cx="630" cy="100" r="14" stroke="#aa5f3f" stroke-width=".7" fill="none"></circle>
+              <g font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="23" font-style="italic" fill="#171717">
+                <text x="48" y="135">Bengaluru</text>
+                <text x="326" y="135">Boston</text>
+                <text x="606" y="135" fill="#aa5f3f">Dubai</text>
+              </g>
+              <g font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">
+                <text x="53" y="155">PLATFORM SYSTEMS</text>
+                <text x="304" y="155">BIOTECH + AMI</text>
+                <text x="548" y="155">AI-NATIVE PRODUCTS</text>
+              </g>
+            </svg>
+            <figcaption><b>Fig. I</b> The path that shaped the work: systems first, then biotech research, now AI products.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="shell section" aria-labelledby="research-title">
+      <div class="section-grid">
+        <div class="section-label">02 / Research</div>
+        <div>
+          <h2 id="research-title">The thread I keep pulling is generation under constraints.</h2>
+          <div class="thread-list">
+            <article class="thread">
+              <div>
+                <div class="eyebrow">Robotics</div>
+                <h3>Behavior synthesis with diffusion models</h3>
+              </div>
+              <div>
+                <p>
+                  I built a diffusion-based behavior synthesis model for robotic control because path
+                  planning is not only about reaching a point; it is about producing trajectories that
+                  remain useful under uncertainty. I optimized the model until it was small enough and
+                  fast enough to matter in real-time planning.
+                </p>
+                <div class="proof">
+                  <span>50% smaller model</span>
+                  <span>62% faster inference</span>
+                  <span>Concurrent action generation</span>
+                </div>
+                <figure class="field-figure">
+                  <svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diffusion, path planning, and model compression in behavior synthesis">
+                    <g transform="translate(26 30)">
+                      <rect width="180" height="118" fill="none" stroke="#171717" stroke-width=".8"></rect>
+                      <g fill="#171717" opacity=".38">
+                        <circle cx="22" cy="20" r="1.3"></circle><circle cx="45" cy="82" r="1.3"></circle><circle cx="72" cy="34" r="1.3"></circle><circle cx="108" cy="92" r="1.3"></circle><circle cx="144" cy="24" r="1.3"></circle><circle cx="158" cy="72" r="1.3"></circle><circle cx="96" cy="60" r="1.3"></circle><circle cx="38" cy="52" r="1.3"></circle>
+                      </g>
+                      <polygon points="92,25 143,95 42,95" fill="none" stroke="#aa5f3f" stroke-width="1.6"></polygon>
+                      <text x="0" y="150" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">DENOISE</text>
+                    </g>
+                    <g transform="translate(270 30)">
+                      <rect width="180" height="118" fill="none" stroke="#171717" stroke-width=".8"></rect>
+                      <g stroke="#171717" stroke-width=".5" opacity=".18">
+                        <line x1="0" y1="39" x2="180" y2="39"></line><line x1="0" y1="78" x2="180" y2="78"></line><line x1="60" y1="0" x2="60" y2="118"></line><line x1="120" y1="0" x2="120" y2="118"></line>
+                      </g>
+                      <rect x="44" y="22" width="31" height="38" fill="#171717" opacity=".09" stroke="#171717" stroke-width=".7"></rect>
+                      <rect x="107" y="68" width="38" height="30" fill="#171717" opacity=".09" stroke="#171717" stroke-width=".7"></rect>
+                      <path d="M 18 88 C 54 34, 88 78, 116 62 S 150 44, 162 68" fill="none" stroke="#aa5f3f" stroke-width="1.8"></path>
+                      <g fill="#aa5f3f"><circle cx="18" cy="88" r="4"></circle><circle cx="162" cy="68" r="4"></circle></g>
+                      <text x="0" y="150" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">PLAN</text>
+                    </g>
+                    <g transform="translate(514 30)">
+                      <rect width="88" height="118" fill="none" stroke="#171717" stroke-width=".8"></rect>
+                      <rect x="128" y="44" width="28" height="30" fill="none" stroke="#aa5f3f" stroke-width="1.4"></rect>
+                      <path d="M 98 59 L 116 59" stroke="#aa5f3f" stroke-width="1.3"></path>
+                      <path d="M 110 52 L 116 59 L 110 66" stroke="#aa5f3f" stroke-width="1.3" fill="none"></path>
+                      <text x="12" y="32" font-family="Aptos, Segoe UI, sans-serif" font-size="13" letter-spacing="2" fill="#171717">1.0X</text>
+                      <text x="120" y="100" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#aa5f3f">0.5X</text>
+                      <text x="0" y="150" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">COMPRESS</text>
+                    </g>
+                  </svg>
+                  <figcaption><b>Fig. II</b> Behavior synthesis as three moves: denoise the action space, plan a trajectory, compress the model.</figcaption>
+                </figure>
+                <div class="pullquote">Most real deployments do not have infinite compute. That constraint makes the research more interesting.</div>
+              </div>
+            </article>
+
+            <article class="thread">
+              <div>
+                <div class="eyebrow">Protein design</div>
+                <h3>ESM-Decoder for low-resource adaptation</h3>
+              </div>
+              <div>
+                <p>
+                  I adapted Meta's ESM model into an auto-regressive decoder for protein sequence
+                  modeling. The motivation was practical: make strong biological sequence models easier
+                  to adapt without paying the full compute bill every time a new experiment appears.
+                </p>
+                <div class="proof">
+                  <span>70% model-size reduction</span>
+                  <span>97% fewer FLOPs with LoRA</span>
+                  <span>650M and 3B model fine-tuning</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="thread">
+              <div>
+                <div class="eyebrow">Generative modeling</div>
+                <h3>Denoising diffusion across modalities</h3>
+              </div>
+              <div>
+                <p>
+                  I implemented DDPM, Karras-style diffusion, flow-based generative models, and
+                  spectrogram diffusion for audio. I kept returning to the same engineering question:
+                  can a sampler keep quality while taking fewer steps?
+                </p>
+                <div class="proof">
+                  <span>Sampling reduced to 10 steps</span>
+                  <span>35 to 15 function evaluations</span>
+                  <span>FID 4.1 on Fashion-MNIST</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="thread">
+              <div>
+                <div class="eyebrow">Molecular ML</div>
+                <h3>Graph learning at Arrakis Therapeutics</h3>
+              </div>
+              <div>
+                <p>
+                  In Boston's biotech ecosystem, I trained models on molecular data, advanced
+                  graph-based molecular property prediction, and extended HiGNN with chemical bond data
+                  and contrastive pre-training. The goal was not novelty for its own sake; it was better
+                  prediction and faster iteration for therapeutic discovery.
+                </p>
+                <div class="proof">
+                  <span>7% better solubility prediction</span>
+                  <span>3M-compound distributed training</span>
+                  <span>60% faster deployment iteration</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="systems" class="shell section" aria-labelledby="systems-title">
+      <div class="section-grid">
+        <div class="section-label">03 / Systems</div>
+        <div>
+          <h2 id="systems-title">I like research most when it survives contact with production.</h2>
+          <div class="chapter">
+            <div class="chapter-year">Now</div>
+            <div>
+              <h3>At Emtribe, I architect AI-native products end to end.</h3>
+              <p>
+                I am the tech lead and sole architect behind Vaayu and emFI, two flagship products
+                built from scratch. My role is not limited to implementation: I define the product
+                shape, draw the user flows, make architecture decisions, build core systems, and hold
+                the line between what the product promises and what the engineering can safely deliver.
+              </p>
+              <p>
+                Vaayu is significant because sustainability work is usually trapped in spreadsheets,
+                manual collection, and brittle reporting. I built the platform around ingestion,
+                computation, and reporting pipelines so emissions and ESG data can become a working
+                system instead of a quarterly scramble. The hard part is not just storing the data; it
+                is making calculations repeatable, auditable, and usable by teams that are not
+                engineers.
+              </p>
+              <p>
+                emFI is the more radical product. Sustainable finance usually asks borrowers and
+                lenders to move through rigid forms, document checklists, and opaque workflows. I am
+                building it as a structureless, AI-native platform where a copilot becomes the primary
+                interface: users prompt to onboard a project, submit an application, complete diligence,
+                surface missing information, or move a financing workflow forward without first learning
+                how the software is organized.
+              </p>
+              <figure class="field-figure">
+                <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Traditional forms transformed into a structureless copilot workflow">
+                  <g transform="translate(28 28)" stroke-linecap="round">
+                    <rect x="0" y="0" width="200" height="170" fill="none" stroke="#171717" stroke-width=".9"></rect>
+                    <line x1="26" y1="35" x2="174" y2="35" stroke="#171717" stroke-width=".8"></line>
+                    <line x1="26" y1="64" x2="174" y2="64" stroke="#171717" stroke-width=".8"></line>
+                    <line x1="26" y1="93" x2="174" y2="93" stroke="#171717" stroke-width=".8"></line>
+                    <line x1="26" y1="122" x2="124" y2="122" stroke="#171717" stroke-width=".8"></line>
+                    <rect x="26" y="140" width="58" height="14" fill="#171717"></rect>
+                    <text x="0" y="205" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">FIELDS / STEPS / SUBMIT</text>
+                  </g>
+                  <g stroke="#aa5f3f" stroke-width="1.6" fill="none">
+                    <line x1="274" y1="112" x2="365" y2="112"></line>
+                    <path d="M 356 104 L 365 112 L 356 120"></path>
+                  </g>
+                  <g transform="translate(410 36)">
+                    <rect x="0" y="0" width="252" height="42" rx="3" fill="none" stroke="#171717" stroke-width=".9"></rect>
+                    <text x="16" y="27" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#171717">onboard a sustainable project</text>
+                    <circle cx="126" cy="90" r="11" fill="#aa5f3f" opacity=".14" stroke="#aa5f3f" stroke-width="1"></circle>
+                    <text x="116" y="94" font-family="Aptos, Segoe UI, sans-serif" font-size="9" letter-spacing="1" fill="#aa5f3f">LLM</text>
+                    <line x1="126" y1="42" x2="126" y2="79" stroke="#aa5f3f" stroke-width="1"></line>
+                    <g stroke="#aa5f3f" stroke-width=".9" fill="none">
+                      <path d="M 118 100 Q 66 130 26 148"></path>
+                      <path d="M 124 102 Q 104 132 84 158"></path>
+                      <path d="M 126 103 L 126 164"></path>
+                      <path d="M 130 102 Q 152 132 172 158"></path>
+                      <path d="M 135 100 Q 190 128 224 148"></path>
+                    </g>
+                    <g fill="#171717">
+                      <circle cx="26" cy="148" r="3.2"></circle>
+                      <circle cx="84" cy="158" r="3.2"></circle>
+                      <circle cx="126" cy="164" r="3.2"></circle>
+                      <circle cx="172" cy="158" r="3.2"></circle>
+                      <circle cx="224" cy="148" r="3.2"></circle>
+                    </g>
+                    <text x="0" y="205" font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">PROMPT / INFER / ACT</text>
+                  </g>
+                </svg>
+                <figcaption><b>Fig. III</b> emFI replaces rigid form flow with a copilot that infers the task and acts through tools.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="chapter">
+            <div class="chapter-year">Privacy</div>
+            <div>
+              <h3>I design AI systems around data boundaries.</h3>
+              <p>
+                For emFI, I built privacy walls, PII masking, and in-house LLM deployment so sensitive
+                data could stay resident. The model is only one part of the product; the trust boundary
+                is part of the architecture.
+              </p>
+            </div>
+          </div>
+          <div class="chapter">
+            <div class="chapter-year">Edge</div>
+            <div>
+              <h3>I compress models until they can work where the cloud cannot.</h3>
+              <p>
+                I built an on-device OCR engine for smart meters at remote offline sites. The pipeline
+                runs three models in sequence under 80MB main memory on legacy hardware, reaching 99%
+                accuracy without depending on connectivity.
+              </p>
+              <figure class="field-figure">
+                <svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-stage smart meter OCR pipeline under 80MB memory">
+                  <g stroke-linecap="round" fill="none">
+                    <g transform="translate(28 48)" stroke="#67645f" stroke-width=".9">
+                      <rect x="0" y="0" width="70" height="92" rx="3"></rect>
+                      <circle cx="35" cy="34" r="15"></circle>
+                      <path d="M 35 22 L 35 34"></path>
+                      <rect x="15" y="64" width="40" height="15"></rect>
+                    </g>
+                    <g stroke="#aa5f3f" stroke-width="1.2">
+                      <line x1="112" y1="94" x2="150" y2="94"></line>
+                      <path d="M 142 87 L 150 94 L 142 101"></path>
+                      <line x1="286" y1="94" x2="324" y2="94"></line>
+                      <path d="M 316 87 L 324 94 L 316 101"></path>
+                      <line x1="460" y1="94" x2="498" y2="94"></line>
+                      <path d="M 490 87 L 498 94 L 490 101"></path>
+                    </g>
+                    <g transform="translate(164 48)" stroke="#171717" stroke-width=".9">
+                      <rect x="0" y="0" width="106" height="92" rx="3"></rect>
+                      <rect x="24" y="27" width="58" height="36" stroke="#aa5f3f" stroke-dasharray="4 3"></rect>
+                    </g>
+                    <g transform="translate(338 48)" stroke="#171717" stroke-width=".9">
+                      <rect x="0" y="0" width="106" height="92" rx="3"></rect>
+                      <line x1="26" y1="27" x2="26" y2="65" stroke="#aa5f3f"></line>
+                      <line x1="44" y1="27" x2="44" y2="65" stroke="#aa5f3f"></line>
+                      <line x1="62" y1="27" x2="62" y2="65" stroke="#aa5f3f"></line>
+                      <line x1="80" y1="27" x2="80" y2="65" stroke="#aa5f3f"></line>
+                    </g>
+                    <g transform="translate(512 48)" stroke="#171717" stroke-width=".9">
+                      <rect x="0" y="0" width="150" height="92" rx="3"></rect>
+                      <text x="23" y="57" font-family="Aptos, Segoe UI, sans-serif" font-size="27" fill="#171717" stroke="none">42 137</text>
+                    </g>
+                  </g>
+                  <g font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2">
+                    <text x="28" y="170" fill="#67645f">METER</text>
+                    <text x="164" y="170" fill="#171717">DETECT</text>
+                    <text x="338" y="170" fill="#171717">SEGMENT</text>
+                    <text x="512" y="170" fill="#171717">READ</text>
+                    <text x="214" y="206" fill="#aa5f3f">&lt; 80MB / 99% ACCURACY / NO CLOUD</text>
+                  </g>
+                  <line x1="28" y1="188" x2="662" y2="188" stroke="#171717" stroke-width=".6"></line>
+                </svg>
+                <figcaption><b>Fig. IV</b> Smart-meter OCR as an edge pipeline: detect, segment, read, and stay offline.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="chapter">
+            <div class="chapter-year">Civic</div>
+            <div>
+              <h3>I used LLMs to make public process easier to read.</h3>
+              <p>
+                At MAPLE in Boston, I built RAG pipelines for legislative bill summaries, automated
+                tagging, and testimony summarization. The system processed more than 1000 testimonies a
+                month and helped turn dense civic documents into something easier to track and act on.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="impact-title">
+      <div class="section-grid">
+        <div class="section-label">04 / Evidence</div>
+        <div>
+          <h2 id="impact-title">The results I try to leave behind are measurable.</h2>
+          <div class="impact-board" aria-label="Selected measurable outcomes">
+            <div class="metric">
+              <strong>99%</strong>
+              <span>OCR accuracy on remote smart meter readings</span>
+            </div>
+            <div class="metric">
+              <strong>20%</strong>
+              <span>ROUGE improvement for legislative bill summaries</span>
+            </div>
+            <div class="metric">
+              <strong>90%</strong>
+              <span>Processing-time reduction after fixing race-prone offer pipelines</span>
+            </div>
+            <div class="metric">
+              <strong>100K+</strong>
+              <span>Users processed in under 10 minutes by a campaign microservice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="notes-title">
+      <div class="section-grid">
+        <div class="section-label">05 / Notes</div>
+        <div>
+          <h2 id="notes-title">A few operating beliefs.</h2>
+          <div class="lab-notes">
+            <article class="note">
+              <div>
+                <div class="note-index">Motivation</div>
+                <h3>Useful AI is usually a system, not a demo.</h3>
+                <p>
+                  The interesting work is where modeling, product design, data movement, security, and
+                  deployment all meet. That is why I enjoy owning the path from prototype to production.
+                </p>
+              </div>
+              <small>Agentic platforms, RAG, in-house LLMs, MLOps</small>
+            </article>
+            <article class="note">
+              <div>
+                <div class="note-index">Research taste</div>
+                <h3>I am drawn to models that search through uncertainty.</h3>
+                <p>
+                  Diffusion, path planning, molecular generation, and protein sequence modeling all ask
+                  a similar question: how do we move from noise toward structure while respecting real
+                  constraints?
+                </p>
+              </div>
+              <small>Diffusion models, DiTs, flow models, GNNs, ESM, LoRA</small>
+            </article>
+            <article class="note">
+              <div>
+                <div class="note-index">Engineering style</div>
+                <h3>I prefer small, hard-working systems.</h3>
+                <p>
+                  I like models that fit the hardware, services that keep latency low, and workflows
+                  that remove tedious human input without hiding failure modes.
+                </p>
+              </div>
+              <small>Distributed systems, edge inference, quantization, PyTorch</small>
+            </article>
+          </div>
+          <div class="stack" aria-label="Selected skills">
+            <span>Python</span>
+            <span>TypeScript</span>
+            <span>PyTorch</span>
+            <span>HuggingFace</span>
+            <span>Diffusers</span>
+            <span>LangChain</span>
+            <span>LangGraph</span>
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>AWS SageMaker</span>
+            <span>Redis</span>
+            <span>Elasticsearch</span>
+            <span>PySpark</span>
+            <span>CUDA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="shell contact-band" aria-labelledby="contact-title">
+      <div class="contact">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2 id="contact-title">I am interested in AI systems that need both research taste and production judgment.</h2>
+          <p>
+            Especially diffusion-based planning, molecular and protein modeling, agentic workflows,
+            privacy-conscious LLM products, and edge ML that has to run under real constraints.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:bindelapranay@gmail.com">bindelapranay@gmail.com</a>
+          <a href="https://linkedin.com/in/pranay-bindela">linkedin.com/in/pranay-bindela</a>
+          <a href="tel:+971521706388">+971 52 170 6388</a>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Pranay Bindela</span>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById("motion-field");
+      if (!canvas) return;
+
+      var ctx = canvas.getContext("2d");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+      var points = [];
+      var tick = 0;
+
+      function resize() {
+        var rect = canvas.getBoundingClientRect();
+        canvas.width = Math.floor(rect.width * dpr);
+        canvas.height = Math.floor(rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        createPoints(rect.width, rect.height);
+      }
+
+      function createPoints(w, h) {
+        points = [];
+        var count = Math.max(42, Math.floor((w * h) / 5200));
+        for (var i = 0; i < count; i += 1) {
+          points.push({
+            x: (Math.sin(i * 12.9898) * 43758.5453 % 1 + 1) % 1 * w,
+            y: (Math.sin(i * 78.233) * 24831.123 % 1 + 1) % 1 * h,
+            r: 1.4 + (i % 5) * .34,
+            p: i * .37
+          });
+        }
+      }
+
+      function draw() {
+        var w = canvas.clientWidth;
+        var h = canvas.clientHeight;
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = "#e6eee8";
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.strokeStyle = "rgba(23, 23, 23, .12)";
+        ctx.lineWidth = 1;
+        for (var gx = 42; gx < w; gx += 58) {
+          ctx.beginPath();
+          ctx.moveTo(gx, 0);
+          ctx.lineTo(gx, h);
+          ctx.stroke();
+        }
+
+        for (var gy = 38; gy < h; gy += 58) {
+          ctx.beginPath();
+          ctx.moveTo(0, gy);
+          ctx.lineTo(w, gy);
+          ctx.stroke();
+        }
+
+        points.forEach(function (pt, index) {
+          var drift = reduceMotion ? 0 : Math.sin(tick * .014 + pt.p) * 5;
+          var px = pt.x + drift;
+          var py = pt.y + Math.cos(tick * .012 + pt.p) * (reduceMotion ? 0 : 4);
+          ctx.fillStyle = index % 7 === 0 ? "rgba(170, 95, 63, .75)" : "rgba(47, 111, 87, .42)";
+          ctx.beginPath();
+          ctx.arc(px, py, pt.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        var startX = w * .1;
+        var startY = h * .78;
+        var endX = w * .9;
+        var endY = h * .22;
+        var pulse = reduceMotion ? .5 : (Math.sin(tick * .022) + 1) / 2;
+
+        ctx.strokeStyle = "#171717";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.bezierCurveTo(w * .28, h * (.54 - pulse * .06), w * .48, h * (.72 + pulse * .04), w * .58, h * .45);
+        ctx.bezierCurveTo(w * .69, h * (.18 + pulse * .07), w * .78, h * .32, endX, endY);
+        ctx.stroke();
+
+        ctx.fillStyle = "#171717";
+        [[startX, startY], [endX, endY]].forEach(function (pair) {
+          ctx.beginPath();
+          ctx.rect(pair[0] - 4, pair[1] - 4, 8, 8);
+          ctx.fill();
+        });
+
+        ctx.fillStyle = "#3b61a8";
+        var agentX = startX + (endX - startX) * pulse;
+        var agentY = startY + (endY - startY) * pulse + Math.sin(pulse * Math.PI * 2) * h * .08;
+        ctx.beginPath();
+        ctx.arc(agentX, agentY, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        tick += 1;
+        if (!reduceMotion) requestAnimationFrame(draw);
+      }
+
+      resize();
+      draw();
+      window.addEventListener("resize", resize);
+    }());
+  </script>
+</body>
+</html>
