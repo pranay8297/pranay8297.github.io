@@ -11,11 +11,7 @@
       --ink: #171717;
       --muted: #67645f;
       --line: #d9d2c4;
-      --field: #e6eee8;
-      --blue: #3b61a8;
-      --green: #2f6f57;
       --clay: #aa5f3f;
-      --yellow: #c79b32;
       --white: #fffaf1;
       --max: 1180px;
     }
@@ -52,12 +48,12 @@
 
     a {
       color: inherit;
-      text-decoration-color: rgba(47, 111, 87, .45);
+      text-decoration-color: rgba(170, 95, 63, .44);
       text-underline-offset: 5px;
     }
 
     a:hover {
-      text-decoration-color: var(--green);
+      text-decoration-color: var(--clay);
     }
 
     .shell {
@@ -104,17 +100,17 @@
     }
 
     .hero {
-      min-height: calc(100vh - 72px);
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(300px, .78fr);
-      gap: clamp(28px, 6vw, 82px);
+      min-height: calc(92vh - 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: clamp(44px, 7vw, 92px) 0 clamp(54px, 9vw, 118px);
       border-bottom: 1px solid var(--line);
     }
 
     .kicker {
-      color: var(--green);
+      color: var(--clay);
       font-size: .78rem;
       text-transform: uppercase;
       letter-spacing: .13em;
@@ -131,8 +127,8 @@
     }
 
     h1 {
-      max-width: 820px;
-      font-size: clamp(3.1rem, 8.8vw, 8.6rem);
+      max-width: 980px;
+      font-size: clamp(3.25rem, 9.3vw, 9.4rem);
       line-height: .9;
     }
 
@@ -147,43 +143,10 @@
     }
 
     .hero-copy {
-      max-width: 650px;
+      max-width: 720px;
       margin: 28px 0 0;
       font-size: clamp(1.05rem, 1.8vw, 1.35rem);
       color: #2c2b28;
-    }
-
-    .nameplate {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: end;
-      max-width: 760px;
-      margin-bottom: 26px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nameplate strong {
-      display: block;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(2rem, 5.4vw, 5.2rem);
-      font-weight: 500;
-      line-height: .88;
-      letter-spacing: 0;
-    }
-
-    .nameplate em {
-      display: block;
-      margin-left: .56em;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .sigil {
-      width: clamp(62px, 8vw, 96px);
-      height: auto;
-      margin-bottom: 4px;
     }
 
     .hero-meta {
@@ -198,54 +161,6 @@
     .hero-meta span {
       padding: 7px 0;
       border-bottom: 1px solid var(--line);
-    }
-
-    .signal-panel {
-      position: relative;
-      min-height: 520px;
-      border-left: 1px solid var(--line);
-      padding-left: clamp(22px, 4vw, 46px);
-    }
-
-    .signal-label {
-      display: grid;
-      grid-template-columns: 78px 1fr;
-      gap: 15px;
-      align-items: start;
-      margin-bottom: 26px;
-      color: var(--muted);
-      font-size: .82rem;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-
-    .signal-label::before {
-      content: "";
-      height: 1px;
-      margin-top: .72em;
-      background: var(--ink);
-    }
-
-    #motion-field {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 360px;
-      display: block;
-      background: transparent;
-      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 0 58%, transparent 83%);
-      mask-image: radial-gradient(ellipse at 50% 50%, #000 0 58%, transparent 83%);
-    }
-
-    .field-caption {
-      position: relative;
-      z-index: 1;
-      margin: 12px 0 0;
-      padding-top: 14px;
-      border-top: 1px solid rgba(23, 23, 23, .12);
-      color: var(--muted);
-      max-width: 420px;
-      font-size: .9rem;
     }
 
     .section {
@@ -292,7 +207,7 @@
     .thread-list {
       display: grid;
       gap: 0;
-      border-top: 1px solid var(--ink);
+      border-top: 1px solid var(--line);
     }
 
     .thread {
@@ -304,7 +219,7 @@
     }
 
     .thread .eyebrow {
-      color: var(--green);
+      color: var(--clay);
       font-size: .76rem;
       text-transform: uppercase;
       letter-spacing: .12em;
@@ -319,20 +234,28 @@
     .proof {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 9px 18px;
+      margin-top: 18px;
     }
 
     .proof span {
       display: inline-flex;
       align-items: center;
-      min-height: 30px;
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      background: rgba(255, 250, 241, .54);
+      min-height: 24px;
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: var(--muted);
       font-size: .84rem;
-      border-radius: 999px;
+      border-radius: 0;
+    }
+
+    .proof span::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      margin-right: 8px;
+      background: var(--clay);
     }
 
     .chapter {
@@ -363,49 +286,111 @@
       max-width: 780px;
     }
 
-    .impact-board {
+    .chapter.current-work {
+      grid-template-columns: 118px minmax(0, 1fr);
+      padding: clamp(28px, 5vw, 48px) 0;
+      border-top: 1px solid var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    .chapter.current-work h3 {
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+    }
+
+    .current-work p {
+      max-width: 850px;
+    }
+
+    .current-work .field-figure {
+      max-width: 920px;
+    }
+
+    .system-ledger {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      gap: 0;
+      margin-top: 30px;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .system-ledger div {
+      min-height: 138px;
+      padding: 18px 18px 18px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .system-ledger div:last-child {
+      border-right: 0;
+    }
+
+    .system-ledger b {
+      display: block;
+      color: var(--clay);
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 18px;
+    }
+
+    .system-ledger span {
+      display: block;
+      color: #33302b;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(1.08rem, 1.5vw, 1.34rem);
+      line-height: 1.14;
+    }
+
+
+    .impact-board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      background: transparent;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
     }
 
     .metric {
-      min-height: 188px;
-      background: rgba(255, 250, 241, .62);
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      min-height: 0;
+      background: transparent;
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: minmax(120px, .24fr) minmax(0, 1fr);
+      gap: clamp(18px, 4vw, 44px);
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
     }
 
     .metric strong {
       display: block;
       font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(2rem, 3.4vw, 3.5rem);
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
       font-weight: 500;
-      line-height: .95;
-      color: var(--ink);
+      line-height: .86;
+      color: var(--clay);
     }
 
     .metric span {
-      color: var(--muted);
-      font-size: .94rem;
+      color: #33302b;
+      font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+      max-width: 620px;
     }
 
     .lab-notes {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      gap: clamp(24px, 4vw, 42px);
+      background: transparent;
+      border-top: 1px solid var(--ink);
+      padding-top: 28px;
     }
 
     .note {
-      min-height: 330px;
-      background: rgba(255, 250, 241, .68);
-      padding: clamp(22px, 3vw, 30px);
+      min-height: 0;
+      background: transparent;
+      padding: 0 0 0 18px;
+      border-left: 1px solid var(--line);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -440,7 +425,7 @@
 
     .stack span {
       border: 1px solid var(--line);
-      background: rgba(230, 238, 232, .5);
+      background: rgba(255, 250, 241, .36);
       padding: 5px 9px;
       font-size: .86rem;
       color: #3c3934;
@@ -455,8 +440,8 @@
       display: block;
       width: 100%;
       height: auto;
-      background: rgba(255, 250, 241, .44);
-      border: 1px solid var(--line);
+      background: transparent;
+      border: 0;
     }
 
     .field-figure figcaption {
@@ -524,29 +509,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero,
       .section-grid,
       .thread,
       .contact {
         grid-template-columns: 1fr;
       }
 
-      .nameplate {
-        grid-template-columns: 1fr;
-      }
-
-      .sigil {
-        justify-self: end;
-      }
-
       .hero {
         min-height: auto;
-      }
-
-      .signal-panel {
-        min-height: auto;
-        border-left: 0;
-        padding-left: 0;
       }
 
       .section-label {
@@ -554,17 +524,29 @@
       }
 
       .body-block,
-      .impact-board,
+      .system-ledger,
       .lab-notes {
         grid-template-columns: 1fr;
       }
 
+      .system-ledger div {
+        min-height: 0;
+        padding: 18px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .system-ledger div:last-child {
+        border-bottom: 0;
+      }
+
       .metric {
-        min-height: 150px;
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
 
       .note {
-        min-height: 260px;
+        min-height: 0;
       }
 
       .contact-links {
@@ -598,10 +580,6 @@
         gap: 8px;
       }
 
-      #motion-field {
-        height: 280px;
-      }
-
       .footer {
         flex-direction: column;
       }
@@ -632,53 +610,45 @@
       <div>
         <h1 id="hero-title">I build AI systems that move from idea to working machinery.</h1>
         <p class="hero-copy">
-          I am Pranay Bindela, a tech lead and software engineer shaped by production systems,
-          Boston's biotech gravity, and a long-running fascination with diffusion, path planning,
-          and models that learn structure from noisy worlds.
+          I am Pranay Bindela, a tech lead, deep learning practitioner, system architect, and software
+          engineer. I work where models become products: agentic platforms, production ML pipelines,
+          privacy-conscious LLM systems, edge inference, diffusion, and path planning.
         </p>
         <div class="hero-meta" aria-label="Profile summary">
           <span>Based in Dubai</span>
           <span>5+ years building software</span>
-          <span>MS in Applied Machine Intelligence, Northeastern</span>
-          <span>Former Boston biotech co-op</span>
+          <span>Deep learning and AI systems</span>
+          <span>System architecture and production engineering</span>
         </div>
       </div>
-
-      <aside class="signal-panel" aria-label="Diffusion and path planning visual">
-        <div class="signal-label">Research signal</div>
-        <canvas id="motion-field" width="760" height="760"></canvas>
-        <p class="field-caption">
-          A small field of particles finding a clean path through uncertainty. That idea shows up
-          repeatedly in my work: molecules, proteins, legislation, invoices, meters, and robots.
-        </p>
-      </aside>
     </section>
 
     <section id="story" class="shell section" aria-labelledby="story-title">
       <div class="section-grid">
         <div class="section-label">01 / Story</div>
         <div>
-          <h2 id="story-title">Boston made the work feel physical.</h2>
+          <h2 id="story-title">I learned to treat AI as both model and machinery.</h2>
           <p class="lead">
-            I went to Northeastern to study applied machine intelligence, but Boston gave me a more
-            specific question: what happens when learning systems touch the real world?
+            My work sits between deep learning research and software architecture: understand the model
+            deeply, then build the system that lets it behave reliably outside the notebook.
           </p>
           <div class="body-block">
             <p>
-              I lived in a city where biotech is not an abstraction. At Arrakis Therapeutics, my co-op
-              sat inside the therapeutic discovery loop: molecular strings, fingerprints, graph neural
-              networks, solubility prediction, distributed training, and the pressure to make research
-              iteration faster.
+              I started as a software engineer building high-throughput systems where latency, race
+              conditions, queues, search, analytics, and user-facing reliability mattered. That systems
+              foundation still shapes how I build AI products today: a model is only useful when the
+              data flow, deployment path, privacy boundary, and user workflow are all coherent.
             </p>
             <p>
-              That experience changed how I judge AI work. I care about the model, but I care just as
-              much about the surrounding system: how data enters, how errors are contained, how privacy
-              is protected, how quickly a researcher or operator can try the next idea, and whether the
-              system still behaves when it leaves the notebook.
+              At Northeastern and later at Arrakis Therapeutics, I pushed deeper into applied machine
+              intelligence: molecular representations, graph neural networks, LLMs, distributed
+              training, and MLOps. That research context sharpened the same instinct: I care about
+              model quality, but also about iteration speed, error containment, and whether the system
+              can be trusted by the people using it.
             </p>
           </div>
           <figure class="field-figure">
-            <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Career path from Bengaluru to Boston to Dubai">
+            <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Career path across systems, applied AI, and AI products">
               <path d="M 90 100 Q 245 28 360 100" stroke="#aa5f3f" stroke-width="1.2" stroke-dasharray="4 7" fill="none"></path>
               <path d="M 360 100 Q 505 24 630 100" stroke="#aa5f3f" stroke-width="1.2" stroke-dasharray="4 7" fill="none"></path>
               <g fill="#171717">
@@ -692,17 +662,17 @@
               </g>
               <circle cx="630" cy="100" r="14" stroke="#aa5f3f" stroke-width=".7" fill="none"></circle>
               <g font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="23" font-style="italic" fill="#171717">
-                <text x="48" y="135">Bengaluru</text>
-                <text x="326" y="135">Boston</text>
-                <text x="606" y="135" fill="#aa5f3f">Dubai</text>
+                <text x="48" y="135">Systems</text>
+                <text x="318" y="135">Applied AI</text>
+                <text x="572" y="135" fill="#aa5f3f">AI Products</text>
               </g>
               <g font-family="Aptos, Segoe UI, sans-serif" font-size="11" letter-spacing="2" fill="#67645f">
-                <text x="53" y="155">PLATFORM SYSTEMS</text>
-                <text x="304" y="155">BIOTECH + AMI</text>
-                <text x="548" y="155">AI-NATIVE PRODUCTS</text>
+                <text x="45" y="155">SWE / ARCHITECTURE</text>
+                <text x="296" y="155">DEEP LEARNING / ML</text>
+                <text x="548" y="155">PRODUCTION AI SYSTEMS</text>
               </g>
             </svg>
-            <figcaption><b>Fig. I</b> The path that shaped the work: systems first, then biotech research, now AI products.</figcaption>
+            <figcaption><b>Fig. I</b> The path that shaped the work: software systems, applied deep learning, then production AI products.</figcaption>
           </figure>
         </div>
       </div>
@@ -813,10 +783,10 @@
               </div>
               <div>
                 <p>
-                  In Boston's biotech ecosystem, I trained models on molecular data, advanced
-                  graph-based molecular property prediction, and extended HiGNN with chemical bond data
-                  and contrastive pre-training. The goal was not novelty for its own sake; it was better
-                  prediction and faster iteration for therapeutic discovery.
+                  At Arrakis Therapeutics, I trained models on molecular data, advanced graph-based
+                  molecular property prediction, and extended HiGNN with chemical bond data and
+                  contrastive pre-training. The goal was not novelty for its own sake; it was better
+                  prediction, stronger representations, and faster iteration for therapeutic discovery.
                 </p>
                 <div class="proof">
                   <span>7% better solubility prediction</span>
@@ -835,7 +805,7 @@
         <div class="section-label">03 / Systems</div>
         <div>
           <h2 id="systems-title">I like research most when it survives contact with production.</h2>
-          <div class="chapter">
+          <div class="chapter current-work">
             <div class="chapter-year">Now</div>
             <div>
               <h3>At Emtribe, I architect AI-native products end to end.</h3>
@@ -861,6 +831,24 @@
                 surface missing information, or move a financing workflow forward without first learning
                 how the software is organized.
               </p>
+              <div class="system-ledger" aria-label="Emtribe current work themes">
+                <div>
+                  <b>Vaayu</b>
+                  <span>ESG data becomes repeatable computation instead of manual reporting effort.</span>
+                </div>
+                <div>
+                  <b>emFI</b>
+                  <span>Sustainable finance workflows move from rigid forms to an AI-native copilot.</span>
+                </div>
+                <div>
+                  <b>Trust</b>
+                  <span>Privacy walls, PII masking, and in-house LLMs keep sensitive data resident.</span>
+                </div>
+                <div>
+                  <b>Edge</b>
+                  <span>Small models run where cloud connectivity and modern hardware are unavailable.</span>
+                </div>
+              </div>
               <figure class="field-figure">
                 <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Traditional forms transformed into a structureless copilot workflow">
                   <g transform="translate(28 28)" stroke-linecap="round">
@@ -974,9 +962,9 @@
             <div>
               <h3>I used LLMs to make public process easier to read.</h3>
               <p>
-                At MAPLE in Boston, I built RAG pipelines for legislative bill summaries, automated
-                tagging, and testimony summarization. The system processed more than 1000 testimonies a
-                month and helped turn dense civic documents into something easier to track and act on.
+                At MAPLE, I built RAG pipelines for legislative bill summaries, automated tagging, and
+                testimony summarization. The system processed more than 1000 testimonies a month and
+                helped turn dense civic documents into something easier to track and act on.
               </p>
             </div>
           </div>
@@ -986,25 +974,21 @@
 
     <section class="shell section" aria-labelledby="impact-title">
       <div class="section-grid">
-        <div class="section-label">04 / Evidence</div>
+        <div class="section-label">04 / Field Results</div>
         <div>
-          <h2 id="impact-title">The results I try to leave behind are measurable.</h2>
+          <h2 id="impact-title">What changed after the work shipped.</h2>
           <div class="impact-board" aria-label="Selected measurable outcomes">
             <div class="metric">
               <strong>99%</strong>
-              <span>OCR accuracy on remote smart meter readings</span>
+              <span>Remote meter readings became usable without cloud connectivity or modern hardware.</span>
             </div>
             <div class="metric">
               <strong>20%</strong>
-              <span>ROUGE improvement for legislative bill summaries</span>
+              <span>Legislative bill summaries became easier to track with a measurable lift in ROUGE.</span>
             </div>
             <div class="metric">
               <strong>90%</strong>
-              <span>Processing-time reduction after fixing race-prone offer pipelines</span>
-            </div>
-            <div class="metric">
-              <strong>100K+</strong>
-              <span>Users processed in under 10 minutes by a campaign microservice</span>
+              <span>A race-prone offer pipeline became faster and stopped crashing under production load.</span>
             </div>
           </div>
         </div>
@@ -1013,9 +997,9 @@
 
     <section class="shell section" aria-labelledby="notes-title">
       <div class="section-grid">
-        <div class="section-label">05 / Notes</div>
+        <div class="section-label">05 / Working Notes</div>
         <div>
-          <h2 id="notes-title">A few operating beliefs.</h2>
+          <h2 id="notes-title">The beliefs underneath the work.</h2>
           <div class="lab-notes">
             <article class="note">
               <div>
@@ -1094,119 +1078,5 @@
     </section>
   </main>
 
-  <script>
-    (function () {
-      var canvas = document.getElementById("motion-field");
-      if (!canvas) return;
-
-      var ctx = canvas.getContext("2d");
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-      var points = [];
-      var tick = 0;
-
-      function resize() {
-        var rect = canvas.getBoundingClientRect();
-        canvas.width = Math.floor(rect.width * dpr);
-        canvas.height = Math.floor(rect.height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        createPoints(rect.width, rect.height);
-      }
-
-      function createPoints(w, h) {
-        points = [];
-        var count = Math.max(42, Math.floor((w * h) / 5200));
-        for (var i = 0; i < count; i += 1) {
-          points.push({
-            x: (Math.sin(i * 12.9898) * 43758.5453 % 1 + 1) % 1 * w,
-            y: (Math.sin(i * 78.233) * 24831.123 % 1 + 1) % 1 * h,
-            r: 1.4 + (i % 5) * .34,
-            p: i * .37
-          });
-        }
-      }
-
-      function draw() {
-        var w = canvas.clientWidth;
-        var h = canvas.clientHeight;
-        ctx.clearRect(0, 0, w, h);
-
-        ctx.strokeStyle = "rgba(170, 95, 63, .2)";
-        ctx.lineWidth = .9;
-        [
-          [w * .08, h * .18, w * .08, h * .26],
-          [w * .08, h * .18, w * .16, h * .18],
-          [w * .92, h * .82, w * .92, h * .74],
-          [w * .92, h * .82, w * .84, h * .82]
-        ].forEach(function (line) {
-          ctx.beginPath();
-          ctx.moveTo(line[0], line[1]);
-          ctx.lineTo(line[2], line[3]);
-          ctx.stroke();
-        });
-
-        points.forEach(function (pt, index) {
-          var drift = reduceMotion ? 0 : Math.sin(tick * .014 + pt.p) * 5;
-          var px = pt.x + drift;
-          var py = pt.y + Math.cos(tick * .012 + pt.p) * (reduceMotion ? 0 : 4);
-          ctx.fillStyle = index % 7 === 0 ? "rgba(170, 95, 63, .48)" : "rgba(23, 23, 23, .18)";
-          ctx.beginPath();
-          ctx.arc(px, py, pt.r, 0, Math.PI * 2);
-          ctx.fill();
-        });
-
-        var startX = w * .1;
-        var startY = h * .78;
-        var endX = w * .9;
-        var endY = h * .22;
-        var pulse = reduceMotion ? .5 : (Math.sin(tick * .022) + 1) / 2;
-
-        ctx.strokeStyle = "rgba(23, 23, 23, .2)";
-        ctx.lineWidth = 1;
-        ctx.setLineDash([3, 7]);
-        ctx.beginPath();
-        ctx.moveTo(startX, startY + h * .02);
-        ctx.bezierCurveTo(w * .24, h * .64, w * .46, h * .36, w * .6, h * .5);
-        ctx.bezierCurveTo(w * .7, h * .62, w * .82, h * .24, endX, endY + h * .02);
-        ctx.stroke();
-
-        ctx.setLineDash([]);
-        ctx.strokeStyle = "rgba(23, 23, 23, .78)";
-        ctx.lineWidth = 1.35;
-        ctx.beginPath();
-        ctx.moveTo(startX, startY);
-        ctx.bezierCurveTo(w * .28, h * (.54 - pulse * .06), w * .48, h * (.72 + pulse * .04), w * .58, h * .45);
-        ctx.bezierCurveTo(w * .69, h * (.18 + pulse * .07), w * .78, h * .32, endX, endY);
-        ctx.stroke();
-
-        ctx.fillStyle = "rgba(23, 23, 23, .86)";
-        [[startX, startY], [endX, endY]].forEach(function (pair) {
-          ctx.beginPath();
-          ctx.rect(pair[0] - 3.5, pair[1] - 3.5, 7, 7);
-          ctx.fill();
-        });
-
-        ctx.fillStyle = "#aa5f3f";
-        var agentX = startX + (endX - startX) * pulse;
-        var agentY = startY + (endY - startY) * pulse + Math.sin(pulse * Math.PI * 2) * h * .08;
-        ctx.beginPath();
-        ctx.arc(agentX, agentY, 4.4, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.strokeStyle = "rgba(170, 95, 63, .22)";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.arc(agentX, agentY, 9, 0, Math.PI * 2);
-        ctx.stroke();
-
-        tick += 1;
-        if (!reduceMotion) requestAnimationFrame(draw);
-      }
-
-      resize();
-      draw();
-      window.addEventListener("resize", resize);
-    }());
-  </script>
 </body>
 </html>
